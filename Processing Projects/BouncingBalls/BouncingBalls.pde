@@ -15,12 +15,15 @@ void draw() { // Happens constantly (screen refresh)
 
 class Ball {
     int x, y, r;
+    int dx, dy; //Speed or Velocity
 
     //Constructor
     Ball(int tempx, int tempy, int tempr) {
         x = tempx;
         y = tempy;
         r = tempr;
+        dx = 3;
+        dy = 3;
     }
 
     void display() {
@@ -28,9 +31,14 @@ class Ball {
     }
 
     void move() {
-        if (y <= height-r) {
-            y++;
-            x++;
+        y = y + dy;
+        x = x + dx;
+
+        if (y >= height - r || y <= 0+r) {
+            dy = dy * -1;
+        }
+        if (x >= width-r || x <= 0+r) {
+            dx = dx * -1;
         }
     }
 }
