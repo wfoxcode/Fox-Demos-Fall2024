@@ -18,19 +18,18 @@ void draw() { // Happens constantly (screen refresh)
 }
 
 void mousePressed() {
-    ballGroup[pos] = new Ball(mouseX, mouseY, 100);
-    pos++; //Next empty position
+    if(pos < ballGroup.length) {
+        ballGroup[pos] = new Ball(mouseX, mouseY, 70);
+        pos++; //Next empty position
+    }
 }
-
-
-
-
 
 
 class Ball {
     int x, y, r;
     int dx, dy; //Speed or Velocity
     int cr, cg, cb; //RGB Values
+    int grav; //Gravity
 
     //Constructor
     Ball(int tempx, int tempy, int tempr) {
@@ -43,9 +42,10 @@ class Ball {
         cg = int( random(0,255));
         cb = int( random(0,255));
 
-        //Set Velocity
-        dx = 3;
-        dy = 3;
+        //Set Velocity & Gravity
+        dx = int( random(-10,10));
+        dy = int( random(-10,10));
+        grav = -1;
     }
 
     void display() {
@@ -56,6 +56,7 @@ class Ball {
     void move() {
         y = y + dy;
         x = x + dx;
+        dy = dy - grav;
 
         if (y >= height - r || y <= 0+r) {
             dy = dy * -1;
