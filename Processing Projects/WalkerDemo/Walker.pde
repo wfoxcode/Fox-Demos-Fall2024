@@ -13,11 +13,13 @@ class Walker {
     }
 
     void display() {
-
+        fill(0);
+        //rect(xpos, ypos, width, height)
+        rect(x, y, size, size); 
     }
 
     void move() {
-
+        
     }
 
 }
