@@ -10,7 +10,7 @@ class Walker {
         x = tempx;
         y = tempy;
         size = 25;
-        speed = 15;
+        speed = 5;
         npc = tempnpc; // If true, automate!
         cr = (int) random(0,255);
         cg = (int) random(0,255);
@@ -28,7 +28,7 @@ class Walker {
 
         //Computer Movement Randomizer
         if (npc) {
-            dir = random(0,3);
+            dir = (int) random(0,3);
         }
 
         //move Up

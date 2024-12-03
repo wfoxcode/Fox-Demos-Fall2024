@@ -9,9 +9,9 @@ void setup() {
     jane = new Walker(width/2+30, height/2-70, false);
 
     //NPCs or Computers
-    sally = new Walker(random(0,width), random(0,height), true);
-    tim = new Walker(random(0,width), random(0,height), true);
-    sandra = new Walker(random(0,width), random(0,height), true);
+    sally = new Walker((int) random(0,width), (int) random(0,height), true);
+    tim = new Walker((int) random(0,width), (int) random(0,height), true);
+    sandra = new Walker((int) random(0,width), (int) random(0,height), true);
 }
 
 void draw() {
