@@ -6,7 +6,7 @@ class Walker {
     boolean npc; //Is this a computer
 
     //Constructor
-    Walker(int tempx, int tempy, int tempnpc) {
+    Walker(int tempx, int tempy, boolean tempnpc) {
         x = tempx;
         y = tempy;
         size = 25;
