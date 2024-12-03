@@ -1,17 +1,30 @@
 // Walker Demo
 // Intro to keyboard input for movement
-Walker joe, jane;
+Walker joe, jane, sally, tim, sandra;
 
 void setup() {
     size(1500, 700);
-    joe = new Walker(width/2, height/2);
-    jane = new Walker(width/2+30, height/2-70);
+    //Users
+    joe = new Walker(width/2, height/2, false);
+    jane = new Walker(width/2+30, height/2-70, false);
+
+    //NPCs or Computers
+    sally = new Walker(random(0,width), random(0,height), true);
+    tim = new Walker(random(0,width), random(0,height), true);
+    sandra = new Walker(random(0,width), random(0,height), true);
 }
 
 void draw() {
     background(255);
     joe.display();
     jane.display();
+
+    sally.display();
+    sally.move(0);
+    tim.display();
+    tim.move(0);
+    sandra.display();
+    sandra.move(0);
 }
 
 void mousePressed() {
