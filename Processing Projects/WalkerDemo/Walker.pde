@@ -32,19 +32,19 @@ class Walker {
         }
 
         //move Up
-        if (dir == 0) {
+        if (dir == 0 && y > 0) {
             y = y - speed;
         }
         //move right
-        else if (dir == 1) {
+        else if (dir == 1 && x < 1500) {
             x = x + speed;
         }
         //move down
-        else if (dir == 2) {
+        else if (dir == 2 && y < 700) {
             y = y + speed;
         }
         //move left
-        else if (dir == 3) {
+        else if (dir == 3 && x > 0) {
             x = x - speed;
         }
     }
